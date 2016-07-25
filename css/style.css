@@ -2,9 +2,10 @@
 	background-color: rgba(255, 204, 102,0.6);
 
 	width:80%;
-	height:600px;
+	height:625px;
 	margin:auto;
 	margin-top: 2%;
+	
 
 
 }
@@ -13,11 +14,16 @@
 	
 	margin-left: 3%;
 	margin-top: 2%;
+	margin-bottom: 2%;
 
-	width:30%;
+	width:20%;
 	height:550px;
 
 	float: left;
+
+	border-width:5px;
+	border-style:dashed;
+	border-color:#FFAC55;
 
 }
 #gameDrawer{
@@ -25,9 +31,33 @@
 
 	margin-left: 3%;
 	margin-top: 2%;
+	margin-bottom: 2%;
 
-	width:60%;
+	width:70%;
 	height:550px;
 
 	float: left;
+
+	border-width:5px;
+	border-style:dashed;
+	border-color:#00FFFF;
 }
+#left-top{
+	border-width:3px;
+	border-style:dashed;
+	border-color:red;
+
+	width:10%;
+	height:10%;
+}
+
+.space{
+	background-color: rgba(255, 255, 255,255.7);
+	width:90%;
+	height:20%	;
+
+	margin-left:5%;
+	margin-top: 7%;
+}
+
+
