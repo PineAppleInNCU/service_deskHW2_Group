@@ -35,22 +35,52 @@
 			</div>
 
 			<div id="gameDrawer">
+			<!--
+				腳色原理:
+				使用js控制dom的x,y值   注意此dom在css必須要position:absolute以參照上一層的x,y值
+				而交疊的判斷則由js的演算法處理
+			-->
 
-				<div id="ask_1_name">
+
+				<div id="character_1" class="character_container">
+					<!--<img />等有腳色圖片的時候，這個取代character_1_div   -->
+					<div id="character_1_div" class="character"></div><!-- 腳色的替代品，之後可以換成圖片 -->
+					<p class="character_p">character_1</p>
+				</div>
+
+				<div id="character_2" class="character_container">
+				<!--<img />等有腳色圖片的時候，這個取代character_1_div   -->
+					<div id="character_1_div" class="character"></div><!-- 腳色的替代品，之後可以換成圖片 -->
+					<p class="character_p">character_1</p>
+				</div>
+
+				<div id="character_3" class="character_container">
+				<!--<img />等有腳色圖片的時候，這個取代character_1_div   -->
+					<div id="character_1_div" class="character"></div><!-- 腳色的替代品，之後可以換成圖片 -->
+					<p class="character_p">character_1</p>
+				</div>
+
+
+
+				<div id="ask_1_name" class="ask_name">
 					<p class="askName_p">請輸入玩家一的名字</p>
 					<input type="tex" name="character_1_name">
 					<button>確定</button>
 				</div>
-				<div id="ask_2_name">
-					
+				<div id="ask_2_name"  class="ask_name">
+					<p class="askName_p">請輸入玩家二的名字</p>
+					<input type="tex" name="character_1_name">
+					<button>確定</button>
 				</div>
-				<div id="ask_3_name">
-					
+				<div id="ask_3_name"  class="ask_name">
+					<p class="askName_p">請輸入玩家三的名字</p>
+					<input type="tex" name="character_1_name">
+					<button>確定</button>
 				</div>
 
 				<!-- 利用js操作display屬性，依序詢問每個腳色的名字
 				演算法:按下button後 觸發function  將ask_1_name 的display設為none  ask_2_name的display設為顯示 並且把textbox裡的內容輸入到js的變數裡，以供運用
-
+				
 				 -->
 
 				<div id="left-top">
