@@ -7,11 +7,19 @@
 
 	</head>
 	<body>
+
+	<!-- 
+		遊戲規則:假如鬼能抓到所有人，則鬼獲勝
+		假如時間內沒有抓到所有的人，則以生存時間為分數
+		站在(safe)區裡，不會增加生存時間，也就是沒有分數
+
+	-->
 		<script type="text/javascript" src="js/script.js"></script>
 
 		<div id="background">
 			
 			<div id="secondeCounter">
+			<!-- 第一個放入遊玩秒數  第二~四個放入腳色狀態-->
 				<div class="space">
 					
 				</div>
@@ -27,20 +35,38 @@
 			</div>
 
 			<div id="gameDrawer">
-				<div id="left-top">
+
+				<div id="ask_1_name">
+					<p class="askName_p">請輸入玩家一的名字</p>
+					<input type="tex" name="character_1_name">
+					<button>確定</button>
+				</div>
+				<div id="ask_2_name">
 					
+				</div>
+				<div id="ask_3_name">
+					
+				</div>
+
+				<!-- 利用js操作display屬性，依序詢問每個腳色的名字
+				演算法:按下button後 觸發function  將ask_1_name 的display設為none  ask_2_name的display設為顯示 並且把textbox裡的內容輸入到js的變數裡，以供運用
+
+				 -->
+
+				<div id="left-top">
+					<p class="wordsInDiv">SAFE</p>
 				</div>
 
 				<div id="right-top">
-					
+					<p class="wordsInDiv">SAFE</p>
 				</div>
 
 				<div id="left-buttom">
-					
+					<p class="wordsInDiv">SAFE</p>
 				</div>
 
 				<div id="right-buttom">
-					
+					<p class="wordsInDiv">SAFE</p>
 				</div>
 			</div>
 

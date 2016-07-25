@@ -35,8 +35,10 @@
 
 	width:70%;
 	height:550px;
+	padding:5px;
 
 	float: left;
+	position: relative; /* 必須有這個屬性，下面的relative才能以此為參照，否則會以整個頁面為參照 */
 
 	border-width:5px;
 	border-style:dashed;
@@ -49,6 +51,83 @@
 
 	width:10%;
 	height:10%;
+
+
+
+	position:absolute;
+	
+	top:0px;
+	left:0px;
+
+
+}
+#right-top{
+	border-width:3px;
+	border-style:dashed;
+	border-color:red;
+
+
+
+	width:10%;
+	height:10%;
+
+	
+
+	position:absolute;
+	
+	top:0px;
+	right:0px;
+}
+#left-buttom{
+	border-width:3px;
+	border-style:dashed;
+	border-color:red;
+
+	width:10%;
+	height:10%;
+
+	position:absolute;
+
+	bottom:0px;
+	left:0px;
+}
+#right-buttom{
+	border-width:3px;
+	border-style:dashed;
+	border-color:red;
+
+	width:10%;
+	height:10%;
+
+	position:absolute;
+	
+	right:0px;
+	bottom:0px;
+	
+}
+#ask_1_name{
+
+	background-color: rgba(0, 225, 255,0.7);
+
+	width:60%;
+	height:30%;
+
+	position:absolute;
+
+	left:20%;
+	top:30%;
+
+	border-width:5px;
+	border-style:dashed;
+	border-color:#FFAC55;
+
+	text-align: center;
+}
+
+
+.wordsInDiv{
+	text-align: center;
+	color: red; 
 }
 
 .space{
@@ -58,6 +137,9 @@
 
 	margin-left:5%;
 	margin-top: 7%;
+}
+.askName_p{
+	font-size:20px;
 }
 
 
