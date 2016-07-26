@@ -2,9 +2,13 @@
 
 
 1.到我的github點fork
+
 2.到自己的github把專案clone下來
+
 3.寫自己的東西
+
 4.git add -A  , git commit ,git push到自己的github
+
 5.到自己的github點new pull request
 
 
