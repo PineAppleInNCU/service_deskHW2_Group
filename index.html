@@ -45,37 +45,37 @@
 				<div id="character_1" class="character_container">
 					<!--<img />等有腳色圖片的時候，這個取代character_1_div   -->
 					<div id="character_1_div" class="character"></div><!-- 腳色的替代品，之後可以換成圖片 -->
-					<p class="character_p">character_1</p>
+					<p class="character_p" id = "p1">character_1</p>
 				</div>
 
 				<div id="character_2" class="character_container">
 				<!--<img />等有腳色圖片的時候，這個取代character_1_div   -->
 					<div id="character_1_div" class="character"></div><!-- 腳色的替代品，之後可以換成圖片 -->
-					<p class="character_p">character_1</p>
+					<p class="character_p" id = "p2">character_2</p>
 				</div>
 
 				<div id="character_3" class="character_container">
 				<!--<img />等有腳色圖片的時候，這個取代character_1_div   -->
 					<div id="character_1_div" class="character"></div><!-- 腳色的替代品，之後可以換成圖片 -->
-					<p class="character_p">character_1</p>
+					<p class="character_p" id = "p3">character_3</p>
 				</div>
 
 
 
 				<div id="ask_1_name" class="ask_name">
 					<p class="askName_p">請輸入玩家一的名字</p>
-					<input type="tex" name="character_1_name">
-					<button>確定</button>
+					<input type="text" id="change1" name="character_1_name">
+					<button onclick = "changeName1()">確定</button>
 				</div>
 				<div id="ask_2_name"  class="ask_name">
 					<p class="askName_p">請輸入玩家二的名字</p>
-					<input type="tex" name="character_1_name">
-					<button>確定</button>
+					<input type="text" id="change2" name="character_1_name">
+					<button onclick = "changeName2()">確定</button>
 				</div>
 				<div id="ask_3_name"  class="ask_name">
 					<p class="askName_p">請輸入玩家三的名字</p>
-					<input type="tex" name="character_1_name">
-					<button>確定</button>
+					<input type="text" id="change3" name="character_1_name">
+					<button onclick = "changeName3()">確定</button>
 				</div>
 
 				<!-- 利用js操作display屬性，依序詢問每個腳色的名字

@@ -153,6 +153,13 @@
 
 
 }
+#ask_2_name{
+	display: none;
+}
+#ask_3_name{
+	display: none;
+}
+
 .ask_name{
 
 	background-color: rgba(0, 225, 255,0.7);

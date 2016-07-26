@@ -1,3 +1,29 @@
+function changeName1(){
+    var name_element= document.getElementById('change1');
+    var name = name_element.value;
+    document.getElementById("p1").innerHTML = name;
+    document.getElementById("ask_1_name").style.display="none";
+    document.getElementById("ask_2_name").style.display="block";
+}
+
+
+
+function changeName2(){
+    var name_element= document.getElementById('change2');
+    var name = name_element.value;
+    document.getElementById("p2").innerHTML = name;
+    document.getElementById("ask_2_name").style.display="none";
+    document.getElementById("ask_3_name").style.display="block";
+}
+
+
+function changeName3(){
+    var name_element= document.getElementById('change3');
+    var name = name_element.value;
+    document.getElementById("p3").innerHTML = name;
+    document.getElementById("ask_3_name").style.display="none";
+}
+
 var rightPressed=false;
 var leftPressed=false ;
 var upPressed=false;
