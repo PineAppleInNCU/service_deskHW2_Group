@@ -23,6 +23,11 @@ function changeName3(){
     document.getElementById("p3").innerHTML = name;
     document.getElementById("ask_3_name").style.display="none";
 }
+var c = 0;
+function myCounter() {
+    document.getElementById("totaltime").innerHTML = ++c + "Sec";
+}
+
 
 var rightPressed=false;
 var leftPressed=false ;
