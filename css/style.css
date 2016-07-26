@@ -33,9 +33,9 @@
 	margin-top: 2%;
 	margin-bottom: 2%;
 
-	width:70%;/* 為了判斷邊界方便，建議不要使用% */
+	width:1000px;/* 為了判斷邊界方便，建議不要使用% */
 	height:550px;
-	padding:5px;
+	padding:3px;
 
 	float: left;
 	position: relative; /* 必須有這個屬性，下面的relative才能以此為參照，否則會以整個頁面為參照 */
@@ -123,7 +123,7 @@
 #character_3{
 	position:absolute;
 	
-	top:500px;
+	top:300px;
 	left:500px;
 }
 
