@@ -14,24 +14,35 @@
 		站在(safe)區裡，不會增加生存時間，也就是沒有分數
 
 	-->
+<<<<<<< HEAD
+=======
+
+>>>>>>> a67771c774050f2f06d11ec27ab5286f98900f2f
 		<div id="background">
 			
 			<div id="secondeCounter">
 			<!-- 第一個放入遊玩秒數  第二~四個放入腳色狀態-->
+				<div class="space1">
+					<p id="totaltime">Ghost Chasing</p>
+				</div>
 				<div class="space">
+					<p >Player 1 <br>Time: 0 Sec<br>Count: 0</p>
 					
 				</div>
 				<div class="space">
+					<p>Player 2 <br>Time: 0 Sec<br>Count: 0</p>
 					
 				</div>
 				<div class="space">
-					
-				</div>
-				<div class="space">
+					<p>Player 3 <br>Time: 0 Sec<br>Count: 0</p>
 					
 				</div>
 			</div>
-
+			<div id = "buttons">
+				 <input id = "start" type="image" src="start.png" onclick ="myTimer = setInterval(myCounter, 1000)" width="48" height="48">
+				 <input id = "stop"  type="image" src="stop.png" onclick ="clearInterval(myTimer)" width="48" height="48">
+				 <input id = "refresh"  type="image" src="re.png"  onClick="window.location.reload()" width="48" height="48">
+			</div>
 			<div id="gameDrawer">
 			<!--
 				腳色原理:
@@ -41,37 +52,45 @@
 				<div id="character_1" class="character_container">
 					<!--<img />等有腳色圖片的時候，這個取代character_1_div   -->
 					<div id="character_1_div" class="character"></div><!-- 腳色的替代品，之後可以換成圖片 -->
-					<p class="character_p">character_1</p>
+					<p class="character_p" id = "p1">character_1</p>
 				</div>
 
 				<div id="character_2" class="character_container">
 				<!--<img />等有腳色圖片的時候，這個取代character_1_div   -->
 					<div id="character_1_div" class="character"></div><!-- 腳色的替代品，之後可以換成圖片 -->
+<<<<<<< HEAD
 					<p class="character_p">character_2</p>
+=======
+					<p class="character_p" id = "p2">character_2</p>
+>>>>>>> a67771c774050f2f06d11ec27ab5286f98900f2f
 				</div>
 
 				<div id="character_3" class="character_container">
 				<!--<img />等有腳色圖片的時候，這個取代character_1_div   -->
 					<div id="character_1_div" class="character"></div><!-- 腳色的替代品，之後可以換成圖片 -->
+<<<<<<< HEAD
 					<p class="character_p">character_3</p>
+=======
+					<p class="character_p" id = "p3">character_3</p>
+>>>>>>> a67771c774050f2f06d11ec27ab5286f98900f2f
 				</div>
 
 
 
 				<div id="ask_1_name" class="ask_name">
 					<p class="askName_p">請輸入玩家一的名字</p>
-					<input type="tex" name="character_1_name">
-					<button>確定</button>
+					<input type="text" id="change1" name="character_1_name">
+					<button onclick = "changeName1()">確定</button>
 				</div>
 				<div id="ask_2_name"  class="ask_name">
 					<p class="askName_p">請輸入玩家二的名字</p>
-					<input type="tex" name="character_1_name">
-					<button>確定</button>
+					<input type="text" id="change2" name="character_1_name">
+					<button onclick = "changeName2()">確定</button>
 				</div>
 				<div id="ask_3_name"  class="ask_name">
 					<p class="askName_p">請輸入玩家三的名字</p>
-					<input type="tex" name="character_1_name">
-					<button>確定</button>
+					<input type="text" id="change3" name="character_1_name">
+					<button onclick = "changeName3()">確定</button>
 				</div>
 
 				<!-- 利用js操作display屬性，依序詢問每個腳色的名字

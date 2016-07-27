@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var rightPressed_1=false;
 var leftPressed_1=false ;
 var upPressed_1=false;
@@ -14,6 +15,43 @@ var upPressed_3=false;
 var downPressed_3=false;
 /////想簡化的話，可以使用陣列
 
+=======
+function changeName1(){
+    var name_element= document.getElementById('change1');
+    var name = name_element.value;
+    document.getElementById("p1").innerHTML = name;
+    document.getElementById("ask_1_name").style.display="none";
+    document.getElementById("ask_2_name").style.display="block";
+}
+
+
+
+function changeName2(){
+    var name_element= document.getElementById('change2');
+    var name = name_element.value;
+    document.getElementById("p2").innerHTML = name;
+    document.getElementById("ask_2_name").style.display="none";
+    document.getElementById("ask_3_name").style.display="block";
+}
+
+
+function changeName3(){
+    var name_element= document.getElementById('change3');
+    var name = name_element.value;
+    document.getElementById("p3").innerHTML = name;
+    document.getElementById("ask_3_name").style.display="none";
+}
+var c = 0;
+function myCounter() {
+    document.getElementById("totaltime").innerHTML = ++c + "Sec";
+}
+
+
+var rightPressed=false;
+var leftPressed=false ;
+var upPressed=false;
+var downPressed=false;
+>>>>>>> a67771c774050f2f06d11ec27ab5286f98900f2f
 
 
 var x=1000;
