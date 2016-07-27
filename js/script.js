@@ -22,7 +22,7 @@ var div_2 =document.getElementById("character_2");
 var div_3 =document.getElementById("character_3");
 
 var test=document.getElementById("test");
-
+var mouseTest=document.getElementById("mouseTest");
 test.innerHTML='test';
 
 
@@ -371,7 +371,16 @@ function move(){
 	}
 ////////////抽鬼是誰
 
+//////////////
+document.addEventListener('mousemove', mouseMoveHandler, false);
+function mouseMoveHandler(event) {//不用實作，只要按鍵按下，就會自動執行
+   var div = document.getElementById("gameDrawer");
+   var rect = div.getBoundingClientRect();
 
+   var msg = "Mouse position: " + (event.clientX-rect.left) + "," + (event.clientY-rect.top) ;
+   mouseTest.innerHTML=msg;
+}
+//////////////測試用，寫完專案要去掉
 
 
 
@@ -464,7 +473,10 @@ function move(){
 	   (div_Ys[other_player[1]]+55)<=(div_Ys[ghost_number]+55) && (div_Ys[other_player[1]]+55)>=(div_Ys[ghost_number]))
 ){
 		test.innerHTML='ghost_'+(ghost_number+1)+":touch player_"+(other_player[1]+1);
+	//safe area的評斷放在function裡
 	}
+
+	
 ///////撞到鬼
 
 	//if(div[ghost_number]碰觸到其他方塊，則結束遊戲。並依靠結束遊戲的方法，判斷誰輸誰贏)
