@@ -29,14 +29,14 @@ function keyDownHandler(e) {//the action of the key listener
 
         }
         else if(e.keyCode == 38){
-        	upPressed = true;
+            upPressed = true;
 
-        	//div.style.top = parseInt(document.getElementById("character_1").style.top)-y+'px';//若要使用此列程式碼，要先初始化
+            //div.style.top = parseInt(document.getElementById("character_1").style.top)-y+'px';//若要使用此列程式碼，要先初始化
         }
         else if(e.keyCode == 40){
-        	downPressed = true ;
+            downPressed = true ;
 
-        	//div.style.top = parseInt(document.getElementById("character_1").style.top)+y+'px';
+            //div.style.top = parseInt(document.getElementById("character_1").style.top)+y+'px';
         }
 
 
@@ -52,36 +52,36 @@ function keyUpHandler(e) {
 
         }
         else if(e.keyCode == 38){
-        	upPressed = false;
+            upPressed = false;
         }
         else if(e.keyCode == 40){
-        	downPressed = false ;
+            downPressed = false ;
         }
 
 }
 
 if(rightPressed){
-	div.style.left = '100px';
+    div.style.left = '100px';
 }
 else{
-	div.style.left='0px';
+    div.style.left='0px';
 }
 
 
 function move(){
-	if(rightPressed){
-		div.style.left = parseInt(document.getElementById("character_1").style.left)+x+'px';
-	}
-	else if(leftPressed){
-		div.style.left = parseInt(document.getElementById("character_1").style.left)-x+'px';
-	}
-	else if(upPressed){
-		div.style.top = parseInt(document.getElementById("character_1").style.top)-y+'px';//若要使用此列程式碼，要先初始化
-	}
-	else if(downPressed){
-		div.style.top = parseInt(document.getElementById("character_1").style.top)+y+'px';
-	}
-	requestAnimationFrame(move);
+    if(rightPressed){
+        div.style.left = parseInt(document.getElementById("character_1").style.left)+x+'px';
+    }
+    else if(leftPressed){
+        div.style.left = parseInt(document.getElementById("character_1").style.left)-x+'px';
+    }
+    else if(upPressed){
+        div.style.top = parseInt(document.getElementById("character_1").style.top)-y+'px';//若要使用此列程式碼，要先初始化
+    }
+    else if(downPressed){
+        div.style.top = parseInt(document.getElementById("character_1").style.top)+y+'px';
+    }
+    requestAnimationFrame(move);
 }
 move();
 
