@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 var rightPressed_1=false;
 var leftPressed_1=false ;
 var upPressed_1=false;
@@ -15,7 +15,7 @@ var upPressed_3=false;
 var downPressed_3=false;
 /////想簡化的話，可以使用陣列
 
-=======
+
 function changeName1(){
     var name_element= document.getElementById('change1');
     var name = name_element.value;
@@ -47,11 +47,7 @@ function myCounter() {
 }
 
 
-var rightPressed=false;
-var leftPressed=false ;
-var upPressed=false;
-var downPressed=false;
->>>>>>> a67771c774050f2f06d11ec27ab5286f98900f2f
+
 
 
 var x=1000;
