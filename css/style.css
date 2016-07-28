@@ -14,7 +14,7 @@
 	
 	margin-left: 3%;
 	margin-top: 2%;
-	margin-bottom: 2%;
+	
 
 	width:20%;
 	height:550px;
@@ -26,20 +26,50 @@
 	border-color:#FFAC55;
 
 }
+
+#start{
+	position: absolute;
+
+	left :397px;
+	top :10%;
+	width: 30px;
+	height: 30px;
+
+}
+
+#stop{
+	position: absolute;
+	left :397px;
+	top :17%;
+	width: 30px;
+	height: 30px;
+
+}
+
+#refresh{
+	position: absolute;
+	left :397px;
+	top :24%;
+	width: 30px;
+	height: 30px;
+}
+
+
 #gameDrawer{
 	background-color: rgba(255, 128, 0,0.7);
 
 	margin-left: 3%;
 	margin-top: 2%;
-	margin-bottom: 2%;
-
+	margin-buttom: 2%;
+	padding:3px;
+	
 	width:70%;/* 為了判斷邊界方便，建議不要使用% */
 	height:550px;
-	padding:5px;
+
 
 	float: left;
-	position: relative; /* 必須有這個屬性，下面的relative才能以此為參照，否則會以整個頁面為參照 */
 
+	position: relative; /* 必須有這個屬性，下面的relative才能以此為參照，否則會以整個頁面為參照 */
 	border-width:5px;
 	border-style:dashed;
 	border-color:#00FFFF;
@@ -113,46 +143,64 @@
 	
 	top:100px;
 	left:100px;
+	width: 0px;
+	height: 0px;
 }
 #character_2{
 	position:absolute;
 	
 	top:300px;
 	left:100px;
+	width: 0px;
+	height: 0px;
 }
 #character_3{
 	position:absolute;
 	
-	top:500px;
+	top:300px;
 	left:500px;
+	width: 0px;
+	height: 0px;
 }
 
+#pic1,#pic2,#pic3{
+	width: 55px;
+	height: 55px;
+}
 
-.character_container{
+#win{
+	display: none;
+	background-color: rgba(255, 255, 112,0.7);
 
-	background-color: rgba(0, 0, 0,0.7);
+	width:50%;
+	height:53%;
 
-	width:55px;
-	height:55px;
+	position:absolute;
+
+	left:35%;
+	top:22%;
+
+	border-width:5px;
+	border-style:dashed;
+	border-color:	#5CADAD;
 
 	text-align: center;
-
+	font-family: cursive;
 }
-.character{
-	background-color: rgba(255, 255, 255,0.7);
-	width:40px;
-	height: 40px;
-
-	margin:0px auto; /*div置中  但此方法會讓腳色名稱超出界線 */
-	
-
-
 }
+
 .character_p{
 	font-size:5px;
 
 
 }
+#ask_2_name{
+	display: none;
+}
+#ask_3_name{
+	display: none;
+}
+
 .ask_name{
 
 	background-color: rgba(0, 225, 255,0.7);
@@ -178,14 +226,31 @@
 	text-align: center;
 	color: red; 
 }
+.space1{
+	background-color: rgba(255, 255, 255,255.7);
+	width:90%;
+	height:20%	;
+	text-align: center ;
+	font-family: cursive;
+	font-size: 20pt;
+	color: #FFAC55 ;
+	margin-left:5%;
+	margin-top: 7%;
+	line-height:100px;
+	border-radius: 30%;
+}
 
 .space{
 	background-color: rgba(255, 255, 255,255.7);
 	width:90%;
 	height:20%	;
-
+	text-align: center ;
+	font-family: cursive;
+	font-size: 20pt;
+	color: #FFAC55 ;
 	margin-left:5%;
 	margin-top: 7%;
+	border-radius: 30%;
 }
 .askName_p{
 	font-size:20px;
