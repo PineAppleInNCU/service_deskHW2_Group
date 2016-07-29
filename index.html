@@ -23,21 +23,21 @@
 					<p id="totaltime">Ghost Chasing</p>
 				</div>
 				<div class="space">
-					<p >Player 1 <br>Time: 0 Sec<br>Count: 0</p>
+					<p ><span id="s_1">Player 1 </span><br>Time: <span id="time1">0 Sec</span><br>Count: <span id="c1">0</span></p>
 					
 				</div>
 				<div class="space">
-					<p>Player 2 <br>Time: 0 Sec<br>Count: 0</p>
+					<p><span id="s_2">Player 2 </span><br>Time: <span id="time2">0 Sec</span><br>Count: <span id="c2">0</span></p>
 					
 				</div>
 				<div class="space">
-					<p>Player 3 <br>Time: 0 Sec<br>Count: 0</p>
+					<p><span id="s_3">Player 3 </span><br>Time: <span id="time3">0 Sec</span><br>Count: <span id="c3">0</span></p>
 					
 				</div>
 			</div>
 			<div id = "buttons">
-				 <input id = "start" type="image" src="start.png" onclick ="myTimer = setInterval(myCounter, 1000)" width="48" height="48">
-				 <input id = "stop"  type="image" src="stop.png" onclick ="clearInterval(myTimer)" width="48" height="48">
+				 <input id = "start" type="image" src="start.png" onclick ="myTime()" width="48" height="48">
+				 <input id = "stop"  type="image" src="stop.png" onclick ="clear1()" width="48" height="48">
 				 <input id = "refresh"  type="image" src="re.png"  onClick="window.location.reload()" width="48" height="48">
 			</div>
 			<div id="gameDrawer">
@@ -46,23 +46,22 @@
 				使用js控制dom的x,y值   注意此dom在css必須要position:absolute以參照上一層的x,y值
 				而交疊的判斷則由js的演算法處理
 			-->
-				<div id="character_1" class="character_container">
-					<!--<img />等有腳色圖片的時候，這個取代character_1_div   -->
-					<div id="character_1_div" class="character"></div><!-- 腳色的替代品，之後可以換成圖片 -->
+				<div id="character_1" >
+					<img src="M.png" id="pic1">
 					<p class="character_p" id = "p1">character_1</p>
 				</div>
 
-				<div id="character_2" class="character_container">
+				<div id="character_2" >
 				<!--<img />等有腳色圖片的時候，這個取代character_1_div   -->
-					<div id="character_1_div" class="character"></div><!-- 腳色的替代品，之後可以換成圖片 -->
+					<img src="P.png" id="pic2">
 
 					<p class="character_p" id = "p2">character_2</p>
 
 				</div>
 
-				<div id="character_3" class="character_container">
+				<div id="character_3" >
 				<!--<img />等有腳色圖片的時候，這個取代character_1_div   -->
-					<div id="character_1_div" class="character"></div><!-- 腳色的替代品，之後可以換成圖片 -->
+					<img src="P.png" id="pic3">
 
 					<p class="character_p" id = "p3">character_3</p>
 
@@ -105,12 +104,21 @@
 				<div id="right-buttom">
 					<p class="wordsInDiv">SAFE</p>
 				</div>
-			</div>
 
+			</div>
+			<div id="win">
+				<h1><font color="red">GAME OVER</font></h1>
+				<h2 id="winner">player1 catch player2</h2>
+				<h1><font color="red">RANK:</font></h1>
+				<h2 id="1">1st:player1</h2>
+				<h2 id="2">2nd:player3</h2>
+				<h2 id="3">3rd:player2</h2>
+			</div>
 		</div>
 
 		<p id='test'>測試資料</p>
 		<p id="mouseTest">滑鼠位置</p>
+		
 		<script type="text/javascript" src="js/script.js"></script>
 	</body>
 

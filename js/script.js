@@ -13,6 +13,10 @@ var rightPressed_3=false;
 var leftPressed_3=false ;
 var upPressed_3=false;
 var downPressed_3=false;
+
+var p = true;
+var start = false;
+var safe = true;
 /////想簡化的話，可以使用陣列
 
 
@@ -22,6 +26,7 @@ function changeName1(){
     document.getElementById("p1").innerHTML = name;
     document.getElementById("ask_1_name").style.display="none";
     document.getElementById("ask_2_name").style.display="block";
+    document.getElementById("s_1").innerHTML = name;
 }
 
 
@@ -32,6 +37,7 @@ function changeName2(){
     document.getElementById("p2").innerHTML = name;
     document.getElementById("ask_2_name").style.display="none";
     document.getElementById("ask_3_name").style.display="block";
+    document.getElementById("s_2").innerHTML = name;
 }
 
 
@@ -40,15 +46,70 @@ function changeName3(){
     var name = name_element.value;
     document.getElementById("p3").innerHTML = name;
     document.getElementById("ask_3_name").style.display="none";
+    document.getElementById("s_3").innerHTML = name;
 }
 var c = 0;
+var c1 = 0;
+var c2 = 0;
+var c3 = 0;
+var time ;
+var time1 ;
+var time2 ;
+var time3 ;
+
+function myTime(){
+	time = setInterval(myCounter, 1000);
+	time1 = setInterval(myCounter1, 1000);
+	time2 = setInterval(myCounter2, 1000);
+	time3 = setInterval(myCounter3, 1000);
+	start = true;
+}
+function myTime1(){
+	time1 = setInterval(myCounter1, 1000);
+	start = true;
+}
+function myTime2(){
+	time2 = setInterval(myCounter2, 1000);
+	start = true;
+}
+function myTime3(){
+	time3 = setInterval(myCounter3, 1000);
+	start = true;
+}
 function myCounter() {
     document.getElementById("totaltime").innerHTML = ++c + "Sec";
 }
-
-
-
-
+function myCounter1() {
+    document.getElementById("time1").innerHTML = ++c1 + "Sec";
+    var double1 = c1*10;
+    document.getElementById("c1").innerHTML = double1;
+}
+function myCounter2() {
+    document.getElementById("time2").innerHTML = ++c2 + "Sec";
+    var double2 = c2*10;
+    document.getElementById("c2").innerHTML = double2;
+}
+function myCounter3() {
+    document.getElementById("time3").innerHTML = ++c3 + "Sec";
+    var double3 = c3*10;
+    document.getElementById("c3").innerHTML = double3;
+}
+function clear1(){
+	clearInterval(time);
+	clearInterval(time1);
+	clearInterval(time2);
+	clearInterval(time3);
+	start = false;
+}
+function clear1_1(){
+	clearInterval(time1);
+}
+function clear1_2(){
+	clearInterval(time2);
+}
+function clear1_3(){
+	clearInterval(time3);
+}
 
 var x=1000;
 var div_1 =document.getElementById("character_1"); //要使用這條程式，.html裡的js引入要擺在最下方，因為若js引入式擺在最上方的話，dom還未建立，則會出現null錯誤
@@ -96,7 +157,7 @@ function keyDownHandler(e) {//the action of the key listener
         else if(e.keyCode == 38){
         	upPressed_1 = true;
 
-        	//div.style.top = parseInt(document.getElementById("character_1").style.top)-y+'px';//若要使用此列程式碼，要先初始化
+            //div.style.top = parseInt(document.getElementById("character_1").style.top)-y+'px';//若要使用此列程式碼，要先初始化
         }
         else if(e.keyCode == 40){
         	downPressed_1 = true ;
@@ -124,7 +185,7 @@ function keyDownHandler(e) {//the action of the key listener
         else if(e.keyCode == 83){
         	downPressed_2 = true ;
 
-        	//div.style.top = parseInt(document.getElementById("character_1").style.top)+y+'px';
+            //div.style.top = parseInt(document.getElementById("character_1").style.top)+y+'px';
         }
     //////////////////////////////character_2    wasd
 
@@ -159,8 +220,7 @@ function keyUpHandler(e) {
         }
         else if(e.keyCode == 37) {
             leftPressed_1 = false;
-            
-
+       
         }
         else if(e.keyCode == 38){
         	upPressed_1 = false;
@@ -223,7 +283,7 @@ function keyUpHandler(e) {
 function checkBoarder_1(){//第一個角色的邊界判斷
 	var boarder_left=0;
 	var boarder_top=0;
-	var boarder_right=1000;
+	var boarder_right=750;
 	var boarder_bottom=550;
 
 	var character_1_x=parseInt(document.getElementById("character_1").style.left);
@@ -258,7 +318,7 @@ function checkBoarder_1(){//第一個角色的邊界判斷
 function checkBoarder_2(){//第一個角色的邊界判斷
 	var boarder_left=0;
 	var boarder_top=0;
-	var boarder_right=1000;
+	var boarder_right=745;
 	var boarder_bottom=550;
 
 	var character_2_x=parseInt(document.getElementById("character_2").style.left);
@@ -289,19 +349,19 @@ function checkBoarder_2(){//第一個角色的邊界判斷
 			}
 		}
 	return true;
+
 }
 function checkBoarder_3(){//第一個角色的邊界判斷
 	var boarder_left=0;
 	var boarder_top=0;
-	var boarder_right=1000;
+	var boarder_right=748;
 	var boarder_bottom=550;
 
+	
 	var character_3_x=parseInt(document.getElementById("character_3").style.left);
 	var character_3_y=parseInt(document.getElementById("character_3").style.top);
 	
-
 	test.innerHTML=test.innerHTML+"  character_3:"+character_3_x+"  "+character_3_y;
-
 
 		if(rightPressed_3){
 			if((character_3_x)>(boarder_right-55)){
@@ -325,8 +385,108 @@ function checkBoarder_3(){//第一個角色的邊界判斷
 		}
 	return true;
 }
+var count=0;
+var count2=0;
+var safe2 = true;
+var count1=0;
+var safe1 = true;
+function safeBlock(){
+	var boarder_left=0;
+	var boarder_top=0;
+	var boarder_right=748;
+	var boarder_bottom=550;
 
-
+	var character_1_x=parseInt(document.getElementById("character_1").style.left);
+	var character_1_y=parseInt(document.getElementById("character_1").style.top);
+	var character_2_x=parseInt(document.getElementById("character_2").style.left);
+	var character_2_y=parseInt(document.getElementById("character_2").style.top);
+	var character_3_x=parseInt(document.getElementById("character_3").style.left);
+	var character_3_y=parseInt(document.getElementById("character_3").style.top);
+	//////////第一個
+	if((character_3_x)<(boarder_left+100)&&character_3_y<(boarder_top+100)){
+		clear1_3();
+		safe = false;
+		count=1; 
+	}
+	else if((character_3_x)<(boarder_left+100)&&character_3_y>(boarder_bottom-100)){
+		clear1_3();
+		safe = false;
+		count=1; 
+	}
+	else if((character_3_x)>(boarder_right-100)&&character_3_y>(boarder_bottom-100)){
+		clear1_3();
+		safe = false;
+		count=1; 
+	}
+	else if((character_3_x)>(boarder_right-100)&&character_3_y<(boarder_top+100)){
+		clear1_3();
+		safe = false;
+		count=1;                                    
+	}
+	else if((character_3_x)<(boarder_right-100)||character_3_y>(boarder_top+100)||character_3_y<(boarder_bottom-100)||(character_3_x)>(boarder_left+100)){
+		safe = true;
+	}
+	if(safe==true&&count==1){
+		myTime3();
+		count=0;
+	}
+///////////第二個
+	if((character_2_x)<(boarder_left+100)&&character_2_y<(boarder_top+100)){
+		clear1_2();
+		safe2 = false;
+		count2=1; 
+	}
+	else if((character_2_x)<(boarder_left+100)&&character_2_y>(boarder_bottom-100)){
+		clear1_2();
+		safe2 = false;
+		count2=1; 
+	}
+	else if((character_2_x)>(boarder_right-100)&&character_2_y>(boarder_bottom-100)){
+		clear1_2();
+		safe2 = false;
+		count2=1; 
+	}
+	else if((character_2_x)>(boarder_right-100)&&character_2_y<(boarder_top+100)){
+		clear1_2();
+		safe2 = false;
+		count2=1;                                    
+	}
+	else if((character_2_x)<(boarder_right-100)||character_2_y>(boarder_top+100)||character_2_y<(boarder_bottom-100)||(character_2_x)>(boarder_left+100)){
+		safe2 = true;
+	}
+	if(safe2==true&&count2==1){
+		myTime2();
+		count2=0;
+	}
+	/////////第一個
+	if((character_1_x)<(boarder_left+100)&&character_1_y<(boarder_top+100)){
+		clear1_1();
+		safe1 = false;
+		count1=1; 
+	}
+	else if((character_1_x)<(boarder_left+100)&&character_1_y>(boarder_bottom-100)){
+		clear1_1();
+		safe1 = false;
+		count1=1; 
+	}
+	else if((character_1_x)>(boarder_right-100)&&character_1_y>(boarder_bottom-100)){
+		clear1_1();
+		safe1 = false;
+		count1=1; 
+	}
+	else if((character_1_x)>(boarder_right-100)&&character_1_y<(boarder_top+100)){
+		clear1_1();
+		safe1 = false;
+		count1=1;                                    
+	}
+	else if((character_1_x)<(boarder_right-100)||character_1_y>(boarder_top+100)||character_1_y<(boarder_bottom-100)||(character_1_x)>(boarder_left+100)){
+		safe1 = true;
+	}
+	if(safe1==true&&count1==1){
+		myTime1();
+		count1=0;
+	}
+}
 
 var ghost_change_bool=false;
 var ghost_number=0;
@@ -373,10 +533,10 @@ function move(){
 		if(ghost_number===0){
 			
 
-			document.getElementById("character_2").style.backgroundColor="black";
-			document.getElementById("character_3").style.backgroundColor="black";
+			document.getElementById("pic2").src="P.png";
+			document.getElementById("pic3").src="P.png";
 
-			document.getElementById("character_1").style.backgroundColor="red";
+			document.getElementById("pic1").src="M.png";
 
 			other_player[0]=1;
 			other_player[1]=2;
@@ -384,9 +544,9 @@ function move(){
 		else if(ghost_number===1){
 			
 
-			document.getElementById("character_1").style.backgroundColor="black";
-			document.getElementById("character_3").style.backgroundColor="black";
-			document.getElementById("character_2").style.backgroundColor="red";
+			document.getElementById("pic1").src="P.png";
+			document.getElementById("pic3").src="P.png";
+			document.getElementById("pic2").src="M.png";
 
 			other_player[0]=0;
 			other_player[1]=2;
@@ -394,9 +554,9 @@ function move(){
 		else if(ghost_number===2){
 			
 
-			document.getElementById("character_1").style.backgroundColor="black";
-			document.getElementById("character_2").style.backgroundColor="black";
-			document.getElementById("character_3").style.backgroundColor="red";
+			document.getElementById("pic1").src="P.png";
+			document.getElementById("pic2").src="P.png";
+			document.getElementById("pic3").src="M.png";
 
 			other_player[0]=0;
 			other_player[1]=1;
@@ -421,47 +581,49 @@ function mouseMoveHandler(event) {//不用實作，只要按鍵按下，就會�
 
 /////////////每個角色的操控
 	if(checkBoarder_1()){
-		if(rightPressed_1){
+		if(rightPressed_1==true&&p==true&&start==true){
 			div[0].style.left = parseInt(document.getElementById("character_1").style.left)+x_speed+'px';
 		}
-		else if(leftPressed_1){
+		else if(leftPressed_1==true&&p==true&&start==true){
 			div[0].style.left = parseInt(document.getElementById("character_1").style.left)-x_speed+'px';
 		}
-		else if(upPressed_1){
+		else if(upPressed_1==true&&p==true&&start==true){
 			div[0].style.top = parseInt(document.getElementById("character_1").style.top)-y_speed+'px';//若要使用此列程式碼，要先初始化
 		}
-		else if(downPressed_1){
+		else if(downPressed_1==true&&p==true&&start==true){
 			div[0].style.top = parseInt(document.getElementById("character_1").style.top)+y_speed+'px';
 		}
+
 	}
 
 	if(checkBoarder_2()){
-		if(rightPressed_2){
+		if(rightPressed_2==true&&p==true&&start==true){
 			div[1].style.left = parseInt(document.getElementById("character_2").style.left)+x_speed+'px';
 		}
-		else if(leftPressed_2){
+		else if(leftPressed_2==true&&p==true&&start==true){
 			div[1].style.left = parseInt(document.getElementById("character_2").style.left)-x_speed+'px';
 		}
-		else if(upPressed_2){
+		else if(upPressed_2==true&&p==true&&start==true){
 			div[1].style.top = parseInt(document.getElementById("character_2").style.top)-y_speed+'px';//若要使用此列程式碼，要先初始化
 		}
-		else if(downPressed_2){
+		else if(downPressed_2==true&&p==true&&start==true){
 			div[1].style.top = parseInt(document.getElementById("character_2").style.top)+y_speed+'px';
 		}
 	}
 	if(checkBoarder_3()){
-		if(rightPressed_3){
+		if(rightPressed_3==true&&p==true&&start==true){
 			div[2].style.left = parseInt(document.getElementById("character_3").style.left)+x_speed+'px';
 		}
-		else if(leftPressed_3){
+		else if(leftPressed_3==true&&p==true&&start==true){
 			div[2].style.left = parseInt(document.getElementById("character_3").style.left)-x_speed+'px';
 		}
-		else if(upPressed_3){
+		else if(upPressed_3==true&&p==true&&start==true){
 			div[2].style.top = parseInt(document.getElementById("character_3").style.top)-y_speed+'px';//若要使用此列程式碼，要先初始化
 		}
-		else if(downPressed_3){
+		else if(downPressed_3==true&&p==true&&start==true){
 			div[2].style.top = parseInt(document.getElementById("character_3").style.top)+y_speed+'px';
 		}
+		safeBlock();
 	}
 /////////////每個角色的操控  END
 
@@ -496,6 +658,16 @@ function mouseMoveHandler(event) {//不用實作，只要按鍵按下，就會�
 
 		){
 		test.innerHTML='ghost_'+(ghost_number+1)+":touch player_"+(other_player[0]+1);
+		/////////鬼碰到人會彈出視窗排名
+		document.getElementById("win").style.display="block";
+		document.getElementById("winner").innerHTML = 'player'+(ghost_number+1)+' catches player'+(other_player[0]+1);
+		document.getElementById("1").innerHTML = 'player'+(ghost_number+1);
+		document.getElementById("2").innerHTML = 'player'+(other_player[1]+1);
+		document.getElementById("3").innerHTML = 'player'+(other_player[0]+1);
+		/////////彈出排名後大家都不能再動
+		p=false;
+		/////////時間和計分都停止
+		clear1();
 	}
 	else if((div_Xs[other_player[1]]<=(div_Xs[ghost_number]+55) && div_Xs[other_player[1]]>=div_Xs[ghost_number] &&
 	   div_Ys[other_player[1]]<=(div_Ys[ghost_number]+55) && div_Ys[other_player[1]]>=(div_Ys[ghost_number]) )/*完成左上角的偵測*/ ||
@@ -508,6 +680,10 @@ function mouseMoveHandler(event) {//不用實作，只要按鍵按下，就會�
 ){
 		test.innerHTML='ghost_'+(ghost_number+1)+":touch player_"+(other_player[1]+1);
 	//safe area的評斷放在function裡
+		document.getElementById("win").style.display="block";
+		document.getElementById("winner").innerHTML = 'player'+(ghost_number+1)+' catches player'+(other_player[1]+1);
+		p=false;
+		clear1();
 	}
 
 	
@@ -533,7 +709,7 @@ setInterval(setGhost_change_bool,10000);//將ghost_change_bool改回false
 
 move();
 
-alert("a");
+alert("來玩鬼抓人囉~");
 
 /*
 	現在要做做看鬼
